@@ -1,3 +1,4 @@
 openai
 azure-cognitiveservices-speech
 python_dotenv
+backoff

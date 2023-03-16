@@ -1,12 +1,16 @@
 import os
 import openai
+import backoff
+import common
+
+
+common.logger_config()
 
 
 class ChatApp:
     '''
     Create ChatGPT conversation
     '''
-
     def __init__(self):
         # Setting the API key to use the OpenAI API
         openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -17,6 +21,8 @@ class ChatApp:
             },
         ]
 
+    @common.log_function_call
+    @backoff.on_exception(backoff.expo, openai.error.RateLimitError)
     def chat(self, message):
         '''
         Append the message so it looks like the conversation is continue
@@ -29,4 +35,5 @@ class ChatApp:
             "role": "assistant",
             "content": response["choices"][0]["message"].content
         })
-        return response
+        print(response["choices"][0]["message"].content)
+        return self.messages, response
