@@ -1,6 +1,6 @@
 from unittest import TestCase
 from dotenv import load_dotenv
-from src import chatbot
+from src.backend import chatbot
 
 
 class Test(TestCase):

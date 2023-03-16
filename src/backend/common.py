@@ -8,8 +8,26 @@ from datetime import datetime
 
 # Set default log configuration file path and log folder
 cur_dir = os.path.dirname(__file__)
+
+
+def convert_to_realpath(path):
+    """
+    Get the current workspace should be inside the report-automation folder
+    Convert the path in arg to absolute path with relative path appended
+    So path using relative path should be working normally
+    """
+    workspace_dir = os.path.dirname(
+        os.path.dirname(os.path.realpath(__file__)))
+    if workspace_dir not in path:
+        current_path = (os.path.dirname(os.path.realpath(__file__)))
+        real_path = os.path.join(current_path, path)
+        return real_path
+    else:
+        return path
+
+
 # default_log_config = cur_dir + '/../logconfig.ini'
-default_log_config = 'C:/Users/namng/OneDrive/Code/Python/call-center-openai/logconfig.ini'
+default_log_config = convert_to_realpath('../../logconfig.ini')
 
 
 def logger_config(config_filepath=default_log_config):
@@ -59,22 +77,6 @@ def get_real_path(func):
         real_path = convert_to_realpath(result)
         return real_path
     return wrapper
-
-
-def convert_to_realpath(path):
-    """
-    Get the current workspace should be inside the report-automation folder
-    Convert the path in arg to absolute path with relative path appended
-    So path using relative path should be working normally
-    """
-    workspace_dir = os.path.dirname(
-        os.path.dirname(os.path.realpath(__file__)))
-    if workspace_dir not in path:
-        current_path = (os.path.dirname(os.path.realpath(__file__)))
-        real_path = os.path.join(current_path, path)
-        return real_path
-    else:
-        return path
 
 
 @log_function_call
