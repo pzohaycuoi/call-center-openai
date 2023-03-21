@@ -27,7 +27,7 @@ def convert_to_realpath(path):
 
 
 # default_log_config = cur_dir + '/../logconfig.ini'
-default_log_config = convert_to_realpath('../../logconfig.ini')
+default_log_config = convert_to_realpath("./logconfig.ini")
 
 
 def logger_config(config_filepath=default_log_config):

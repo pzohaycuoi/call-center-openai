@@ -1,3 +1,7 @@
+# DO NOT include azure-functions-worker in this file
+# The Python Worker is managed by Azure Functions platform
+# Manually managing azure-functions-worker may cause unexpected issues
+
 openai
 azure-cognitiveservices-speech
 python_dotenv
@@ -5,3 +9,6 @@ backoff
 sounddevice
 scipy
 wavio
+azure-storage-blob
+azure-eventgrid
+azure-functions

@@ -5,9 +5,9 @@
   "python.testing.unittestArgs": [
     "-v",
     "-s",
-    "./test",
+    "./src",
     "-p",
-    "test*.py"
+    "*test*.py"
   ],
   "python.testing.pytestEnabled": false,
   "python.testing.unittestEnabled": true,
@@ -15,5 +15,12 @@
   "python.linting.pylintArgs": [
     "--init-hook",
     "import sys; sys.path.append('src')"
-  ]
+  ],
+  "azureFunctions.deploySubpath": ".",
+  "azureFunctions.scmDoBuildDuringDeployment": true,
+  "azureFunctions.pythonVenv": ".venv",
+  "azureFunctions.projectLanguage": "Python",
+  "azureFunctions.projectRuntime": "~4",
+  "debug.internalConsoleOptions": "neverOpen",
+  "azureFunctions.projectLanguageModel": 2
 }
