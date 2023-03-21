@@ -67,7 +67,7 @@ def log_function_call(func):
     return wrapper
 
 
-def get_real_path(func):
+def decor_get_real_path(func):
     """
     Decorator for function/method that return path for local
     Convert path to absolute path of the workspace
@@ -107,8 +107,8 @@ def check_path_exist(path, avoid_duplicate: bool = False):
     """
     Check path existence
     avoid_duplicate = False: Check path existence only, return bool for result
-    avoid_duplicate = True: Check path existence for file path, generate new file path with
-    timestamp in filename part, return new path
+    avoid_duplicate = True: Check path existence for file path,
+    generate new file path with timestamp in filename part, return new path
     """
     workspace_dir = os.path.dirname(
         os.path.dirname(os.path.realpath(__file__)))
