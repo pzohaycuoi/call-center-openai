@@ -1,0 +1,20 @@
+{
+  "id": "f990ae04-401e-001d-1f9c-5c58410669af",
+  "data": {
+    "api": "PutBlob",
+    "clientRequestId": "33e79084-0112-4009-817e-d05c8b3e8027",
+    "requestId": "f990ae04-401e-001d-1f9c-5c5841000000",
+    "eTag": "0x8DB2AB37B9533D6",
+    "contentType": "image/gif",
+    "contentLength": 99767,
+    "blobType": "BlockBlob",
+    "url": "https://nambeocallcenteropenai.blob.core.windows.net/callrecord/ezgif.com-resize.gif",
+    "sequencer": "000000000000000000000000000067930000000001129d1e",
+    "storageDiagnostics": {
+      "batchId": "35ebb6d7-0006-00a5-009c-5c0387000000"
+    }
+  },
+  "topic": "/subscriptions/6bdbc7aa-54f4-492a-8d54-d620a343e930/resourceGroups/nambeo-call-center-openai/providers/Microsoft.Storage/storageAccounts/nambeocallcenteropenai",
+  "subject": "/blobServices/default/containers/callrecord/blobs/ezgif.com-resize.gif",
+  "event_type": "Microsoft.Storage.BlobCreated"
+}

@@ -1,6 +1,7 @@
 import os
 import logging
 import azure.cognitiveservices.speech as speechsdk
+
 import common
 
 
@@ -43,6 +44,6 @@ if __name__ == "__main__":
     load_dotenv()
 
     app = SoundFileToText()
-    file_path = common.convert_to_realpath("./harvard.wav")
+    file_path = common.convert_to_realpath("../tests/harvard.wav")
     res = app.convert_to_text(file_path)
     print(res)
