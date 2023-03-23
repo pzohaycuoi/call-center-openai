@@ -26,7 +26,7 @@ class ChatApp:
 
     @common.log_function_call
     @backoff.on_exception(backoff.expo, openai.error.RateLimitError)
-    def chat(self, message):
+    def chat(self, message, retain: bool = True):
         '''
         Make request to ChatGPT
         '''
@@ -38,13 +38,14 @@ class ChatApp:
             logger.error(err)
             raise err
 
-        # Append the message for next request context
-        self.messages.append({
-            "role":
-            "assistant",
-            "content":
-            response["choices"][0]["message"].content
-        })
+        if retain:
+            # Append the message for next request context
+            self.messages.append({
+                "role":
+                "assistant",
+                "content":
+                response["choices"][0]["message"].content
+            })
         return response
 
 

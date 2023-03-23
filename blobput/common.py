@@ -56,7 +56,7 @@ def log_function_call(func):
     def wrapper(*args, **kwargs):
         file_path = inspect.getfile(func)
         file_name = os.path.basename(file_path)
-        logging.debug('%s - %s', func.__name__, file_name)
+        logging.debug('%s - %s - %s', func.__name__, file_name, args)
 
         start_time = time.time()
         result = func(*args, **kwargs)

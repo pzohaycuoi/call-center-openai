@@ -1,0 +1,20 @@
+{
+  "tables": [
+    {
+      "name": "dbo.callcenter_summary",
+      "storedprocedure": "dbo.callcenter_insert_summary",
+      "columns": [
+        {
+          "CustomerFirstName": "Customer first name",
+          "CustomerLastName": "Customer last name",
+          "CustomerID": "Customer id",
+          "ConversationMainReason": "Main reason of the conversation",
+          "CustomerSentiment": "Sentiment of the customer",
+          "CommentOnAgentHandleConversation": "How did the agent handle the conversation",
+          "ConversationOutcome": "What was the Final outcome of the conversation",
+          "ConversationSummary": "create a short summary of the conversation"
+        }
+      ]
+    }
+  ]
+}

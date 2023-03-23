@@ -38,7 +38,7 @@ class AzureDB:
         Execute SQL stored procedures
         """
         try:
-            query = f"exec {stored_procedure} {args[0]}"
+            query = f"exec {stored_procedure} {args}"
             self.cursor.execute(query)
             data = self.cursor.fetchall()
             # if data == '' or data is None or data == []:
@@ -52,7 +52,6 @@ class AzureDB:
             raise err
 
 
-# if __name__ == '__main__':
-#     from dotenv import load_dotenv
-
-#     load_dotenv()
+if __name__ == '__main__':
+    test = AzureDB()
+    test.exec_stored_procedure("dbo.callcenter_insert_summary", "Customer first name", "Customer last name")

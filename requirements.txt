@@ -11,5 +11,5 @@ scipy
 wavio
 azure-storage-blob
 azure-eventgrid
-azure-functions%
+azure-functions
 pyodbc

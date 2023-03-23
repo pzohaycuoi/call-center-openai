@@ -24,7 +24,7 @@ class SoundFileToText:
         self.speech_config.speech_recognition_language = "en-US"
 
     @common.log_function_call
-    def convert_to_text(self, audio_file):
+    def transcribe(self, audio_file):
         """
         Convert sound file to text
         """
@@ -45,5 +45,5 @@ if __name__ == "__main__":
 
     app = SoundFileToText()
     file_path = common.convert_to_realpath("../tests/harvard.wav")
-    res = app.convert_to_text(file_path)
+    res = app.transcribe(file_path)
     print(res)
