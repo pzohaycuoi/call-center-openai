@@ -38,15 +38,12 @@ class AzureDB:
         Execute SQL stored procedures
         """
         try:
-            query = f"exec {stored_procedure} {args}"
+            query = f"exec {stored_procedure} "
+            for count, value in enumerate(args):
+                query += f'"{value}" '
+
             self.cursor.execute(query)
-            data = self.cursor.fetchall()
-            # if data == '' or data is None or data == []:
-            #     logging.info(
-            #         'This enrollment %s does not have data in database', args[0])
-            # else:
-            #     logging.info('This enrollment %s have data in database', args[0])
-            return data
+            return True
         except pyodbc.Error as err:
             logging.critical('%s: %s', err.args[0], err.args[1])
             raise err
