@@ -1,0 +1,9 @@
+openai
+langchain
+azure-cognitiveservices-speech
+azure-storage-blob
+azure-identity
+fastapi[all]
+python-dotenv
+requests
+tiktoken

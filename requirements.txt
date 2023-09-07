@@ -1,0 +1,7 @@
+openai
+langchain
+azure-cognitiveservices-speech
+azure-storage-blob
+streamlit
+python-dotenv
+requests
